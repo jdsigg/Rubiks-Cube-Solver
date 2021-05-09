@@ -1,2 +1,51 @@
 # Rubiks-Cube-Solver
 An all encompassing Rubik's Cube Solver hoisted by JavaScript
+
+Requirements as defined on May 5, 2021 are as follows:
+- Portion of software that solves a rubik’s cube
+- Follow the CFOP
+    - Cross
+    - F2L
+    - OLL
+    - PLL
+- Input their own cube
+- Graphical portion to the cube
+- Extendable
+  - Provide a cookie cutter set of algorithms
+  - User can enter their own
+    - Save them off somehow
+- This has to be done in the browser
+  - JavaScript, HTML
+  - There is no back-end
+- Manage State
+  - Upload a state instance
+  - Download a state instance
+- Give hints to the user
+  - Upon request
+    - Click a button, hover a tooltip, etc.
+- Ability to store off decisions that were made during the solution process
+  - I picked moves X, Y, and Z for the Cross
+  - I picked algorithm 32 for OLL
+  - I picked algorithm 7 for PLL
+- Dispense statistics at the end of a solve
+  - At any point in time, keep track of the number of moves
+  - A list of all the moves that were made
+- Given a timeline of the moves that were made
+  - Backtrack to any prior state of the cube
+    - Know the starting state
+    - Know all the moves required to get there
+    - Don’t have to “remember”
+      - [1, 2, 3, 4, 5, 6, 7, 8] starting cube looked like a giraffe, I could just start with a giraffe and do move 1, 2, 3, 4 to get up to where I was at move 5
+- Nice to develop “optimal” solution
+  - Minimize cube turns (regrip)
+  - Minimize number of moves
+    - F2L setup that leads to OLL 32 and PLL 7 (9 moves + 1 regrip + 8 moves)
+    - F2L setup that leads to OLL 17 and PLL 19 (10 move + 6 moves)
+  - “Weight” regrips vs moves
+  - Custom enter the weight of a regrip (don’t care, never regrip, sometimes, etc.)
+- Benchmark this
+    - Run tests to see how good the solver is at large number of random solutions
+- Solver should still be usable without graphics portion
+  - Load a config file with a collection of algorithms
+  - Run solves in a command prompt window
+- Would be nice to adapt this to mobile users
